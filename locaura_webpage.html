@@ -1,0 +1,327 @@
+<!-- Updated Locaura Pricing Page -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Locaura — Pricing & Packages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Locaura — Google presence packages and Instagram packs. Starter, Growth, Pro and content packages." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent1:#7c3aed; --accent2:#D6A65B; --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --max-width:1200px;
+      --radius:12px;
+    }
+
+    /* Basic reset */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      /* smoother background gradient: more stops and larger color range */
+      background: linear-gradient(180deg, #061223 0%, #071029 15%, #07142a 40%, #071927 70%, #031018 100%);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      -webkit-text-size-adjust:100%;
+      line-height:1.45;
+      padding:20px;
+    }
+
+    .wrap{
+      max-width:var(--max-width);
+      margin:36px auto;
+      padding:28px;
+      border-radius:16px;
+      /* subtle glass effect to separate from background */
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow:0 8px 40px rgba(2,6,23,0.75);
+      border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Header */
+    header{display:flex;align-items:center;gap:18px;margin-bottom:22px}
+    .logo{width:64px;height:64px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-family:Poppins, sans-serif;overflow:hidden;flex:0 0 64px}
+    .logo img{width:64px;height:64px;object-fit:cover;border-radius:var(--radius);display:block}
+    h1{font-family:Poppins,sans-serif;margin:0;font-size:20px}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:13px}
+
+    /* Grid for cards */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+    .card{
+      background:linear-gradient(180deg,var(--card), rgba(6,10,20,0.6));
+      padding:20px;border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.02);
+      min-height:320px;display:flex;flex-direction:column;justify-content:space-between;
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.45)}
+
+    .tag{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;font-size:12px;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));color:var(--muted)}
+    .price{font-family:Poppins, sans-serif;font-size:28px;margin:10px 0;color:white}
+    ul.features{margin:10px 0 18px;padding:0;list-style:none;color:var(--muted);font-size:14px}
+    ul.features li{margin:8px 0;display:flex;gap:10px;align-items:flex-start}
+    .dot{width:8px;height:8px;border-radius:99px;background:linear-gradient(135deg,var(--accent1),var(--accent2));margin-top:6px;flex-shrink:0}
+
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{padding:10px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:600;background:transparent;color:inherit}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;box-shadow:0 8px 18px rgba(124,58,237,0.15)}
+
+    .popular{position:relative}
+    .popular::after{content:'Most Popular';position:absolute;right:14px;top:14px;background:linear-gradient(90deg,var(--accent2),var(--accent1));padding:6px 10px;border-radius:999px;font-size:11px;font-weight:600;color:white}
+
+    .addons{margin-top:22px;padding:16px;border-radius:12px;background:linear-gradient(180deg,var(--glass-2),transparent);border:1px solid rgba(255,255,255,0.03);display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap}
+    .addon-list{display:flex;flex-direction:column;gap:8px}
+    .addon-item{display:flex;justify-content:space-between;color:var(--muted);padding:8px 12px;border-radius:8px}
+
+    footer{margin-top:22px;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .contact{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .chip{background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:10px;border-radius:10px;color:var(--muted);font-size:14px;display:inline-flex;align-items:center;gap:8px}
+
+    /* exclusive addon styling */
+    .exclusive-addon-wrap{width:100%;display:flex;justify-content:center;margin:8px 0}
+    .exclusive-addon{max-width:760px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg, rgba(124,58,237,0.12), rgba(214,166,91,0.06));border:1px solid rgba(255,255,255,0.04);padding:12px 14px;border-radius:10px}
+    .exclusive-addon .label{font-weight:700;color:white}
+    .exclusive-addon .small{color:var(--muted);font-size:13px;margin-top:4px}
+
+    /* Responsive */
+    @media (max-width:1100px){.cards{grid-template-columns:repeat(2,1fr);}}
+    @media (max-width:700px){.cards{grid-template-columns:1fr;} .cta{justify-content:flex-start}}
+    @media (max-width:420px){.wrap{padding:18px}.price{font-size:22px}}
+
+    /* Accessibility focus */
+    button:focus, a:focus{outline:3px solid rgba(124,58,237,0.18);outline-offset:3px}
+  .addon-price{font-weight:700;color:white;padding:6px 10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 18px rgba(6,10,20,0.6);transition:transform .18s ease, box-shadow .18s ease;display:inline-block}
+.addon-item:hover .addon-price{transform:translateY(-4px);box-shadow:0 12px 28px rgba(6,10,20,0.65)}
+</style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <div class="logo" aria-hidden="true">
+        <img src="locaura-logo.jpg" alt="Locaura logo" onerror="this.style.display='none'"/>
+      </div>
+
+      <div>
+        <h1>Locaura</h1>
+        <p style="margin:0;font-size:12px;color:var(--muted)">by Yashdeep</p>
+        <div style="height:10px"></div>
+        <p class="lead">Limited-time launch pricing for new clients.<br><br>Plug & play packages to make local customers find you — clear pricing, real results.</p>
+      </div>
+    </header>
+
+    <!-- Cards Start -->
+    <div class="cards" aria-label="Pricing and packages">
+
+      <!-- Starter -->
+      <article class="card" aria-labelledby="starter-title">
+        <div>
+          <div class="tag">🗺 Starter</div>
+          <h2 id="starter-title" style="margin:8px 0 0">Starter Plan — ₹4,999</h2>
+          <p style="color:var(--muted);margin:6px 0 12px;font-size:13px">Perfect for first-time businesses — quick setup and immediate visibility on Google Maps.</p>
+
+          <div class="price">₹4,999</div>
+          <div style="color:var(--muted);font-size:13px;text-decoration:line-through;">₹8,000</div>
+          <div style="color:var(--accent2);font-size:12px;opacity:0.95;margin-top:0;">Save ₹3,001</div>
+
+          <ul class="features">
+            <li><span class="dot" aria-hidden="true"></span>Claim / create & verify Google Business Profile</li>
+            <li><span class="dot" aria-hidden="true"></span>10 optimized photos (shop, products, team)</li>
+            <li><span class="dot" aria-hidden="true"></span>Keyword-rich business description & categories</li>
+            <li><span class="dot" aria-hidden="true"></span>Hours, services, and quick edits (1 month support)</li>
+          </ul>
+        </div>
+
+        <div class="cta">
+          <button class="btn btn-primary" data-plan="Starter Plan" onclick="contactPlan('Starter Plan')">Book Starter</button>
+        </div>
+      </article>
+
+      <!-- Growth -->
+      <article class="card" aria-labelledby="growth-title">
+        <div>
+          <div class="tag">🚀 Growth</div>
+          <h2 id="growth-title" style="margin:8px 0 0">Growth Plan — ₹8,999</h2>
+          <p style="color:var(--muted);margin:6px 0 12px;font-size:13px">For businesses who want to build reputation & steady visibility (best-seller).</p>
+
+          <div class="price">₹8,999</div>
+          <div style="color:var(--muted);font-size:13px;text-decoration:line-through;">₹14,000</div>
+          <div style="color:var(--accent2);font-size:12px;opacity:0.95;margin-top:0;">Save ₹5,001</div>
+
+          <ul class="features">
+            <li><span class="dot" aria-hidden="true"></span>Full Google Business Profile setup</li>
+            <li><span class="dot" aria-hidden="true"></span>Photos & videos for Google Profile</li>
+            <li><span class="dot" aria-hidden="true"></span>1 high-quality reel — scripted, shot & edited by us</li>
+            <li><span class="dot" aria-hidden="true"></span>Review setup system (acrylic standee + WhatsApp templates)</li>
+            <li><span class="dot" aria-hidden="true"></span>Reply templates, review management tips</li>
+            <li><span class="dot" aria-hidden="true"></span>3 months active optimization & monthly insights</li>
+          </ul>
+
+          <div style="color:var(--muted);font-size:12px;margin-top:8px">We optimise the reel to maximise engagement — while we can’t promise viral reach, clients typically see measurable lift in views and interactions when they follow our posting guidance.</div>
+        </div>
+
+        <div class="cta">
+          <button class="btn btn-primary" data-plan="Growth Plan" onclick="contactPlan('Growth Plan')">Book Growth</button>
+        </div>
+      </article>
+
+      <!-- Exclusive add-on highlight (after Growth) -->
+      <!-- Pro -->
+      <article class="card popular" aria-labelledby="pro-title">
+        <div>
+          <div class="tag">🌐 Pro</div>
+          <h2 id="pro-title" style="margin:8px 0 0">Pro Plan — ₹14,999</h2>
+          <p style="color:var(--muted);margin:6px 0 12px;font-size:13px">For businesses ready to invest in steady customers via organic + ads (6 months).</p>
+
+          <div class="price">₹14,999 (6 months)</div>
+          <div style="color:var(--muted);font-size:13px;text-decoration:line-through;">₹20,000</div>
+          <div style="color:var(--accent2);font-size:12px;opacity:0.95;margin-top:0;">Save ₹5,001</div>
+
+          <ul class="features">
+            <li><span class="dot" aria-hidden="true"></span>Everything in Growth</li>
+            <li><span class="dot" aria-hidden="true"></span>Monthly Google Posts & promotional creatives</li>
+            <li><span class="dot" aria-hidden="true"></span>Google Ads setup & management (6 months)</li>
+            <li><span class="dot" aria-hidden="true"></span>Performance tracking dashboard</li>
+            <li><span class="dot" aria-hidden="true"></span>1 high-quality reel included</li>
+          </ul>
+
+          <div style="color:var(--muted);font-size:12px;margin-top:8px">The included reel is produced to platform standards and optimised for engagement. We can’t guarantee viral performance — but we provide post-copy and timing recommendations to improve reach.</div>
+        </div>
+
+        <div class="cta">
+          <button class="btn btn-primary" data-plan="Pro Plan" onclick="contactPlan('Pro Plan')">Book Pro</button>
+        </div>
+      </article>
+
+      <!-- Exclusive add-on highlight (after Pro) -->
+      <div class="exclusive-addon-wrap" aria-hidden="true">
+        <div class="exclusive-addon">
+          <div>
+            <div class="label">Exclusive add-on for Growth & Pro plans</div>
+            <div class="small">Extra Reels (after plan limit) — up to 3 reels</div>
+          </div>
+          <div class="addon-price">₹1,500 each</div>
+        </div>
+      </div>
+
+      <!-- IG: Single Reel -->
+      <article class="card" aria-labelledby="ig1-title">
+        <div>
+          <div class="tag">🎥 IG — Single</div>
+          <h2 id="ig1-title" style="margin:8px 0 0">1 Reel — ₹3,000</h2>
+          <p style="color:var(--muted);margin:6px 0 12px;font-size:13px">Full creative support for one high-performing reel: script, shoot coordination, edit & post.</p>
+
+          <div class="price">₹3,000</div>
+          <div style="color:var(--muted);font-size:13px;text-decoration:line-through;">₹5,000</div>
+          <div style="color:var(--accent2);font-size:12px;opacity:0.95;margin-top:0;">Includes: concept, script, edit, captions & posting</div>
+
+          <ul class="features">
+            <li><span class="dot" aria-hidden="true"></span>Script & concept</li>
+            <li><span class="dot" aria-hidden="true"></span>Shoot coordination (1 session)</li>
+            <li><span class="dot" aria-hidden="true"></span>Editing & captions</li>
+          </ul>
+        </div>
+
+        <div class="cta">
+          <button class="btn btn-primary" data-plan="Instagram - 1 Reel" onclick="contactPlan('Instagram - 1 Reel')">Book 1 Reel</button>
+        </div>
+      </article>
+
+      <!-- IG: 5 Reels -->
+      <article class="card popular" aria-labelledby="ig5-title">
+        <div>
+          <div class="tag">🎥 IG — Pack</div>
+          <h2 id="ig5-title" style="margin:8px 0 0">5 Reels — ₹12,000</h2>
+          <p style="color:var(--muted);margin:6px 0 12px;font-size:13px">Multi-reel package — scripting, shoots scheduled flexibly, editing & posting.</p>
+
+          <div class="price">₹8,000</div>
+          <div style="color:var(--muted);font-size:13px;text-decoration:line-through;">₹12,000</div>
+          <div style="color:var(--accent2);font-size:12px;opacity:0.95;margin-top:0;">Flexible shoots & batch editing to keep your feed consistent</div>
+
+          <ul class="features">
+            <li><span class="dot" aria-hidden="true"></span>Batch scripting (5 short scripts)</li>
+            <li><span class="dot" aria-hidden="true"></span>Multiple shoot sessions (scheduled)</li>
+            <li><span class="dot" aria-hidden="true"></span>Batch editing, captions & posting</li>
+          </ul>
+        </div>
+
+        <div class="cta">
+          <button class="btn btn-primary" data-plan="Instagram - 5 Reels" onclick="contactPlan('Instagram - 5 Reels')">Book 5 Reels</button>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Add-ons -->
+    <section class="addons" aria-labelledby="addons-title">
+      <div style="flex:1">
+        <div id="addons-title" style="font-weight:700;margin-bottom:8px">Optional Add-ons</div>
+        <div style="color:var(--muted);margin-bottom:8px">High-impact extras to boost performance and conversion.</div>
+        <div class="addon-list">
+          <div class="addon-item"><div>Google Review Acrylic Standee (high-quality)</div><div class="addon-price">₹2,000</div></div>
+          <div class="addon-item"><div>Local Google / Instagram Ads Management</div><div class="addon-price">₹3,000/month + ad spend</div></div>
+          <div class="addon-item"><div>Monthly Google Profile Maintenance</div><div class="addon-price">₹1,000/month</div></div>
+          <div class="addon-item"><div>Monthly Social Content Calendar</div><div class="addon-price">₹1,500</div></div>
+          <div class="addon-item"><div>Professional Photo Shoot (shop + products)</div><div class="addon-price">₹4,000</div></div>
+          <div class="addon-item"><div>Short-form Content Strategy Session</div><div class="addon-price">₹2,000</div></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <div style="font-weight:700">Ready to start?</div>
+        <div style="color:var(--muted);font-size:13px">Book a free 10-minute audit — I’ll show quick wins live on your phone.</div>
+      </div>
+      <div class="contact">
+        <a class="chip" href="tel:+917069306144">📞 +91 70693 06144</a>
+        <a class="chip" href="mailto:workwithyashdeep@gmail.com">✉️ workwithyashdeep@gmail.com</a>
+      </div>
+    </footer>
+  </div>
+
+  <noscript>
+    <div style="max-width:var(--max-width);margin:18px auto;padding:12px;border-radius:8px;background:#071026;color:var(--muted);text-align:center">JavaScript is disabled — contact via phone or email shown on the page.</div>
+  </noscript>
+
+  <script>
+(function(){
+  const defaultPhone = '917069306144';
+
+  window.contactPlan = function(planName){
+    const msg = `Hey Yashdeep, I’m interested in the ${planName}. Can we schedule a quick call?`;
+    const encoded = encodeURIComponent(msg);
+
+    const waMeUrl = `https://wa.me/${defaultPhone}?text=${encoded}`;
+    const apiUrl = `https://api.whatsapp.com/send?phone=${defaultPhone}&text=${encoded}`;
+
+    try {
+      const win = window.open(waMeUrl, '_blank');
+      if (win) return;
+
+      const win2 = window.open(apiUrl, '_blank');
+      if (win2) return;
+
+      window.location.href = waMeUrl;
+    } catch (e) {
+      window.location.href = waMeUrl;
+    }
+
+    setTimeout(() => {
+      if (!document.hidden) {
+        const subject = encodeURIComponent(`Interest: ${planName}`);
+        const body = encodeURIComponent(msg);
+        window.location.href = `mailto:workwithyashdeep@gmail.com?subject=${subject}&body=${body}`;
+      }
+    }, 1000);
+  };
+})();
+</script>
+</body>
+</html>
