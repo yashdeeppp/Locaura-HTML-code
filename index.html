@@ -84,7 +84,7 @@
       background:rgba(255,255,255,0.04);color:var(--text);border:1px solid rgba(255,255,255,0.12);
     }
     .btn-ghost:hover{transform:translateY(-3px);border-color:rgba(214,166,91,0.4);box-shadow:0 12px 30px rgba(0,0,0,0.4)}
-    .btn-block{width:100%}
+    .btn-block{width:100%;text-align:center;}
 
     /* ---------- Section heading ---------- */
     .section{padding:72px 0}
@@ -114,7 +114,6 @@
     .card .ptitle{font-family:Poppins,sans-serif;font-weight:600;font-size:20px;margin:0 0 6px}
     .card .pcount{color:var(--gold);font-size:14px;font-weight:500;margin-bottom:22px;letter-spacing:0.3px}
     .card .price{font-family:Poppins,sans-serif;font-weight:700;font-size:38px;margin:0 0 26px;letter-spacing:-1px}
-    .card .price small{font-size:16px;font-weight:400;color:var(--muted)}
 
     ul.features{list-style:none;margin:0 0 26px;padding:0;flex:1}
     ul.features li{display:flex;gap:12px;align-items:flex-start;color:var(--muted);font-size:14.5px;margin:13px 0;font-weight:300}
@@ -188,7 +187,7 @@
       .hero{padding:40px 0 60px}
     }
 
-    button:focus-visible, a:focus-visible{outline:3px solid rgba(214,166,91,0.5);outline-offset:3px}
+    a.btn:focus-visible, button:focus-visible{outline:3px solid rgba(214,166,91,0.5);outline-offset:3px}
   </style>
 </head>
 <body>
@@ -211,7 +210,9 @@
     <span class="label">Creative Strategy • Production • Editing • Growth</span>
     <h1>Content That Gets Attention.<br><span class="accent">Strategy That Drives Growth.</span></h1>
     <p class="sub">We help brands grow through creative content, high-performing reels, and social-first marketing.</p>
-    <button class="btn btn-primary" onclick="contactPlan('discovery')">Book a Discovery Call</button>
+    <a class="btn btn-primary"
+       href="[wa.me](https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27d%20like%20to%20book%20a%20discovery%20call%20to%20discuss%20content%20strategy%20for%20my%20business.%20Can%20we%20connect%3F)"
+       target="_blank" rel="noopener">Book a Discovery Call</a>
   </section>
 
   <!-- Section 1: Content Growth Packages -->
@@ -239,7 +240,9 @@
           <li><span class="tick"></span>Posting support</li>
         </ul>
         <div class="smalltext">Ideal for businesses starting their content journey.</div>
-        <button class="btn btn-ghost btn-block" onclick="contactPlan('Growth Starter')">Get Started</button>
+        <a class="btn btn-ghost btn-block"
+           href="[wa.me](https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Growth%20Starter%20package%20(5%20Reels%20%E2%80%93%20%E2%82%B912%2C999).%20Can%20we%20schedule%20a%20quick%20call%3F)"
+           target="_blank" rel="noopener">Get Started with Growth Starter</a>
       </article>
 
       <!-- Business Growth -->
@@ -255,7 +258,9 @@
           <li><span class="tick"></span>Monthly content roadmap</li>
         </ul>
         <div class="smalltext">Ideal for businesses wanting consistent audience growth.</div>
-        <button class="btn btn-ghost btn-block" onclick="contactPlan('Business Growth')">Get Started</button>
+        <a class="btn btn-ghost btn-block"
+           href="[wa.me](https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Business%20Growth%20package%20(15%20Reels%20%E2%80%93%20%E2%82%B934%2C999).%20Can%20we%20schedule%20a%20quick%20call%3F)"
+           target="_blank" rel="noopener">Get Started with Business Growth</a>
       </article>
 
       <!-- Brand Growth -->
@@ -271,7 +276,9 @@
           <li><span class="tick"></span>Priority support</li>
         </ul>
         <div class="smalltext">Ideal for businesses serious about scaling their brand.</div>
-        <button class="btn btn-ghost btn-block" onclick="contactPlan('Brand Growth')">Get Started</button>
+        <a class="btn btn-ghost btn-block"
+           href="[wa.me](https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Brand%20Growth%20package%20(30%20Reels%20%E2%80%93%20%E2%82%B959%2C999).%20Can%20we%20schedule%20a%20quick%20call%3F)"
+           target="_blank" rel="noopener">Get Started with Brand Growth</a>
       </article>
 
     </div>
@@ -302,7 +309,9 @@
           <li><span class="tick"></span>Sound design</li>
           <li><span class="tick"></span>Cinematic color grading</li>
         </ul>
-        <button class="btn btn-ghost btn-block" onclick="contactPlan('Signature Reel')">Book Signature Reel</button>
+        <a class="btn btn-ghost btn-block"
+           href="[wa.me](https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Signature%20Reel%20package%20(%E2%82%B912%2C999).%20Can%20we%20schedule%20a%20quick%20call%3F)"
+           target="_blank" rel="noopener">Book My Signature Reel</a>
       </article>
 
       <!-- Premium Reel Package (Most Popular) -->
@@ -319,7 +328,9 @@
           <li><span class="tick"></span>High-end edits</li>
           <li><span class="tick"></span>Brand-focused strategy</li>
         </ul>
-        <button class="btn btn-primary btn-block" onclick="contactPlan('Premium Reel Package')">Book Premium Package</button>
+        <a class="btn btn-primary btn-block"
+           href="[wa.me](https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Premium%20Reel%20Package%20(5%20Reels%20%E2%80%93%20%E2%82%B949%2C999).%20Can%20we%20schedule%20a%20quick%20call%3F)"
+           target="_blank" rel="noopener">Book the Premium Reel Package</a>
       </article>
 
       <!-- Custom Brand Package -->
@@ -335,7 +346,9 @@
           <li><span class="tick"></span>Monthly retainers</li>
           <li><span class="tick"></span>Bespoke production plans</li>
         </ul>
-        <button class="btn btn-ghost btn-block" onclick="contactPlan('Custom Package')">Request Custom Proposal</button>
+        <a class="btn btn-ghost btn-block"
+           href="[wa.me](https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27d%20like%20a%20custom%20content%20package%20for%20my%20business.%20Can%20we%20discuss%20the%20details%20on%20a%20quick%20call%3F)"
+           target="_blank" rel="noopener">Request a Custom Proposal</a>
       </article>
 
     </div>
@@ -362,7 +375,9 @@
     <div class="footer-cta">
       <h2>Ready to Grow?</h2>
       <p>Book a discovery call and let's build a content strategy tailored to your business.</p>
-      <button class="btn btn-primary" onclick="contactPlan('discovery')">Book a Discovery Call</button>
+      <a class="btn btn-primary"
+         href="[wa.me](https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27d%20like%20to%20book%20a%20discovery%20call%20and%20build%20a%20content%20strategy%20for%20my%20business.%20Can%20we%20connect%3F)"
+         target="_blank" rel="noopener">Let's Build My Strategy</a>
       <div class="contact-row">
         <a class="chip" href="tel:+919537802446">📞 +91 95378 02446</a>
         <a class="chip" href="mailto:workwithyashdeep@gmail.com">✉️ workwithyashdeep@gmail.com</a>
@@ -372,49 +387,5 @@
 
   <div class="legal container">© Locaura by Yashdeep — Social Media Growth Agency</div>
 
-  <noscript>
-    <div class="container" style="text-align:center;color:#94a0b3;padding:20px 0">JavaScript is disabled — contact via phone or email above.</div>
-  </noscript>
-
-  <script>
-  (function(){
-    const phone = '919537802446';
-
-    const messages = {
-      'discovery':              "Hey Yashdeep, I'd like to book a discovery call to discuss content strategy for my business.",
-      'Growth Starter':         "Hey Yashdeep, I'm interested in the Growth Starter package. Can we schedule a quick call?",
-      'Business Growth':        "Hey Yashdeep, I'm interested in the Business Growth package. Can we schedule a quick call?",
-      'Brand Growth':           "Hey Yashdeep, I'm interested in the Brand Growth package. Can we schedule a quick call?",
-      'Signature Reel':         "Hey Yashdeep, I'm interested in the Signature Reel package. Can we schedule a quick call?",
-      'Premium Reel Package':   "Hey Yashdeep, I'm interested in the Premium Reel Package. Can we schedule a quick call?",
-      'Custom Package':         "Hey Yashdeep, I'd like a custom content package for my business. Can we schedule a quick call?"
-    };
-
-    window.contactPlan = function(key){
-      const msg = messages[key] || messages['discovery'];
-      const encoded = encodeURIComponent(msg);
-      const waMe = `[wa.me](https://wa.me/${phone}?text=${encoded})`;
-      const apiUrl = `[api.whatsapp.com](https://api.whatsapp.com/send?phone=${phone}&text=${encoded})`;
-
-      try {
-        const win = window.open(waMe, '_blank');
-        if (win) return;
-        const win2 = window.open(apiUrl, '_blank');
-        if (win2) return;
-        window.location.href = waMe;
-      } catch (e) {
-        window.location.href = waMe;
-      }
-
-      setTimeout(() => {
-        if (!document.hidden) {
-          const subject = encodeURIComponent(`Interest: ${key}`);
-          const body = encodeURIComponent(msg);
-          window.location.href = `mailto:workwithyashdeep@gmail.com?subject=${subject}&body=${body}`;
-        }
-      }, 1000);
-    };
-  })();
-  </script>
 </body>
 </html>
