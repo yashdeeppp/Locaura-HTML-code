@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Locaura — Our Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Locaura's services — content strategy, reel production, creative direction, social media growth, and premium video production." />
+  <style>
+    :root{
+      --card:rgba(255,255,255,0.035);
+      --card-border:rgba(255,255,255,0.06);
+      --muted:#94a0b3;
+      --muted-2:#6f7c91;
+      --gold:#D6A65B;
+      --gold-soft:rgba(214,166,91,0.14);
+      --text:#eef2f9;
+      --max-width:1100px;
+      --radius:18px;
+      --px:64px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+      background:#070b14;
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container{
+      max-width:var(--max-width);
+      margin-left:auto;
+      margin-right:auto;
+      padding-left:var(--px);
+      padding-right:var(--px);
+      position:relative;
+      z-index:2;
+    }
+
+    a{color:inherit}
+
+    /* ===== BACKGROUND ===== */
+    .bg-fx{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+    .bg-fx::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#070c18 0%,#0a1020 30%,#0b1326 70%,#070b14 100%)}
+    .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;animation:float 18s ease-in-out infinite}
+    .orb.o1{width:480px;height:480px;background:rgba(214,166,91,.22);top:-120px;right:-80px}
+    .orb.o2{width:420px;height:420px;background:rgba(124,98,180,.20);bottom:-100px;left:-100px;animation-delay:-6s}
+    .orb.o3{width:360px;height:360px;background:rgba(214,166,91,.12);top:40%;left:55%;animation-delay:-12s}
+    @keyframes float{
+      0%,100%{transform:translate(0,0) scale(1)}
+      33%{transform:translate(40px,-50px) scale(1.1)}
+      66%{transform:translate(-30px,30px) scale(.95)}
+    }
+
+    /* ===== NAV ===== */
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+      background:rgba(7,12,24,.55);
+      border-bottom:1px solid rgba(255,255,255,.05);
+      transition:background .3s;
+    }
+    .nav.scrolled{background:rgba(7,12,24,.85)}
+
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:18px var(--px);
+      max-width:var(--max-width);margin:0 auto;
+    }
+
+    .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+
+    .logo{
+      width:42px;height:42px;border-radius:11px;overflow:hidden;
+      flex:0 0 42px;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,rgba(214,166,91,.25),rgba(255,255,255,.04));
+      border:1px solid rgba(214,166,91,.25);
+    }
+    .logo img{width:42px;height:42px;object-fit:cover;border-radius:11px;display:block}
+
+    .nav-brand .name{
+      font-family:Poppins,sans-serif;font-weight:700;
+      font-size:17px;letter-spacing:.5px;
+    }
+
+    .nav-links{display:flex;gap:32px;list-style:none}
+    .nav-links a{
+      text-decoration:none;color:var(--muted);font-size:14.5px;
+      font-weight:500;transition:color .2s;position:relative;
+    }
+    .nav-links a::after{
+      content:'';position:absolute;left:0;bottom:-6px;
+      width:0;height:2px;background:var(--gold);transition:width .25s;
+    }
+    .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+
+    .nav-toggle{
+      display:none;background:none;border:none;
+      color:var(--text);font-size:24px;cursor:pointer;
+    }
+
+    /* ===== MOBILE MENU ===== */
+    .mobile-menu{
+      display:none;flex-direction:column;gap:4px;
+      padding:14px var(--px) 24px;
+      background:rgba(7,12,24,.95);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{
+      color:var(--muted);text-decoration:none;font-size:15px;
+      font-weight:500;padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,.04);
+    }
+    .mobile-menu a:hover{color:var(--gold)}
+
+    /* ===== BUTTONS ===== */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;padding:16px 34px;border-radius:14px;border:none;
+      cursor:pointer;font-weight:600;font-size:15px;
+      font-family:Inter,sans-serif;
+      transition:transform .2s,box-shadow .2s,filter .2s;
+      text-decoration:none;position:relative;overflow:hidden;
+    }
+    .btn-primary{
+      background:linear-gradient(120deg,var(--gold),#e9c884);
+      color:#1a1206;box-shadow:0 12px 34px rgba(214,166,91,.28);
+    }
+    .btn-primary:hover{
+      transform:translateY(-3px);
+      box-shadow:0 18px 44px rgba(214,166,91,.40);
+      filter:brightness(1.04);
+    }
+    .btn-primary::after{
+      content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;
+      background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);
+      transform:skewX(-20deg);transition:left .6s;
+    }
+    .btn-primary:hover::after{left:140%}
+
+    /* ===== PAGE HERO ===== */
+    .page-hero{
+      text-align:center;
+      padding-top:110px;
+      padding-bottom:80px;
+    }
+
+    .page-hero .label{
+      display:inline-block;font-size:12px;letter-spacing:2.5px;
+      text-transform:uppercase;color:var(--gold);
+      padding:10px 22px;border-radius:999px;
+      border:1px solid rgba(214,166,91,.25);
+      background:var(--gold-soft);
+      margin-bottom:32px;font-weight:500;
+      animation:fadeUp .8s ease both;
+    }
+
+    .page-hero h1{
+      font-family:Poppins,sans-serif;font-weight:800;
+      font-size:clamp(32px,5.4vw,56px);line-height:1.08;
+      margin:0 auto 26px;letter-spacing:-1.1px;
+      max-width:800px;
+      animation:fadeUp .8s ease .1s both;
+    }
+
+    .page-hero h1 .accent{
+      background:linear-gradient(120deg,var(--gold),#f0d59a,var(--gold),#f7e6c2);
+      background-size:300% 100%;
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;
+      animation:shimmer 6s linear infinite;
+    }
+
+    @keyframes shimmer{
+      0%{background-position:0% 50%}
+      100%{background-position:300% 50%}
+    }
+
+    .page-hero p.sub{
+      max-width:580px;margin:0 auto;
+      color:var(--muted);font-size:clamp(15px,2.2vw,18px);
+      font-weight:300;
+      animation:fadeUp .8s ease .2s both;
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(28px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    /* ===== REVEAL ===== */
+    .reveal{opacity:0;transform:translateY(40px);transition:opacity .7s,transform .7s}
+    .reveal.in{opacity:1;transform:translateY(0)}
+
+    /* ===== CHIPS ===== */
+    .chips{
+      display:flex;flex-wrap:wrap;gap:14px;
+      justify-content:center;
+      margin:44px auto 0;
+      max-width:720px;
+    }
+
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--card);border:1px solid var(--card-border);
+      border-radius:999px;padding:12px 24px;
+      font-size:14px;color:var(--muted);text-decoration:none;
+      transition:border-color .2s,color .2s,transform .2s;
+    }
+    .chip:hover{
+      border-color:rgba(214,166,91,.45);color:var(--gold);
+      transform:translateY(-3px);
+    }
+
+    /* ===== SERVICE SECTIONS ===== */
+    .section{
+      padding-top:90px;
+      padding-bottom:90px;
+    }
+
+    .srow{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .srow.flip .s-visual{order:2}
+
+    /* --- Service copy --- */
+    .s-copy{
+      padding:10px 0;
+    }
+
+    .s-copy .tag{
+      font-size:12px;letter-spacing:3px;text-transform:uppercase;
+      color:var(--gold);font-weight:600;margin-bottom:18px;
+      display:block;
+    }
+
+    .s-copy h2{
+      font-family:Poppins,sans-serif;font-weight:700;
+      font-size:clamp(24px,3.4vw,36px);
+      margin:0 0 22px;letter-spacing:-.6px;
+    }
+
+    .s-copy p.lead{
+      color:var(--muted);font-weight:300;
+      font-size:16px;margin:0 0 30px;
+      line-height:1.7;
+    }
+
+    .s-copy ul{list-style:none}
+
+    .s-copy li{
+      display:flex;gap:14px;align-items:flex-start;
+      color:var(--muted);font-size:15px;
+      margin:18px 0;font-weight:300;
+      line-height:1.5;
+    }
+
+    .s-copy li .tick{
+      flex-shrink:0;width:22px;height:22px;border-radius:50%;
+      margin-top:1px;background:var(--gold-soft);
+      border:1px solid rgba(214,166,91,.35);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .s-copy li .tick::after{
+      content:'';width:5px;height:9px;
+      border:solid var(--gold);border-width:0 2px 2px 0;
+      transform:rotate(45deg) translate(-1px,-1px);
+    }
+
+    /* --- Service visual --- */
+    .s-visual{
+      position:relative;border-radius:24px;
+      min-height:360px;
+      background:var(--card);
+      border:1px solid var(--card-border);
+      backdrop-filter:blur(12px);
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;
+      transition:transform .3s,border-color .3s;
+    }
+    .s-visual:hover{
+      transform:translateY(-6px);
+      border-color:rgba(214,166,91,.3);
+    }
+
+    .s-visual .glow{
+      position:absolute;width:240px;height:240px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(214,166,91,.3),transparent 70%);
+      animation:pulse 5s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{opacity:.4;transform:scale(1)}
+      50%{opacity:.85;transform:scale(1.15)}
+    }
+
+    .s-visual .big-ico{
+      font-size:88px;position:relative;z-index:2;
+      filter:drop-shadow(0 10px 30px rgba(0,0,0,.4));
+    }
+
+    .s-visual .num-bg{
+      position:absolute;font-family:Poppins,sans-serif;
+      font-weight:800;font-size:220px;
+      color:rgba(255,255,255,.03);line-height:1;
+      z-index:1;user-select:none;
+    }
+
+    /* ===== DIVIDER ===== */
+    .section-divider{
+      height:1px;
+      background:linear-gradient(90deg,transparent,rgba(214,166,91,.2),transparent);
+      margin:0;
+    }
+
+    /* ===== CTA BAND ===== */
+    .cta-band{
+      text-align:center;
+      margin:60px auto 100px;
+      max-width:820px;
+      background:linear-gradient(180deg,rgba(214,166,91,.12),rgba(255,255,255,.02));
+      border:1px solid rgba(214,166,91,.25);
+      border-radius:24px;
+      padding:72px 52px;
+      backdrop-filter:blur(14px);
+      position:relative;overflow:hidden;
+    }
+
+    .cta-band::before{
+      content:'';position:absolute;width:300px;height:300px;
+      background:radial-gradient(circle,rgba(214,166,91,.25),transparent 70%);
+      top:-100px;left:50%;transform:translateX(-50%);
+      animation:pulse2 5s ease-in-out infinite;
+    }
+    @keyframes pulse2{
+      0%,100%{opacity:.4;transform:translateX(-50%) scale(1)}
+      50%{opacity:.8;transform:translateX(-50%) scale(1.15)}
+    }
+
+    .cta-band h2{
+      font-family:Poppins,sans-serif;font-weight:700;
+      font-size:clamp(26px,4.2vw,42px);
+      margin:0 0 22px;letter-spacing:-.6px;
+      position:relative;
+    }
+
+    .cta-band p{
+      color:var(--muted);font-weight:300;font-size:17px;
+      max-width:500px;margin:0 auto 42px;
+      position:relative;line-height:1.7;
+    }
+
+    .cta-band .btn{position:relative}
+
+    /* ===== FOOTER ===== */
+    footer{
+      border-top:1px solid rgba(255,255,255,.05);
+      padding:60px 0 44px;
+      margin-top:60px;
+      position:relative;z-index:2;
+    }
+
+    .foot-inner{
+      display:flex;justify-content:space-between;
+      gap:52px;flex-wrap:wrap;
+    }
+
+    .foot-inner .col-f h4{
+      font-family:Poppins,sans-serif;font-size:15px;
+      margin:0 0 20px;
+    }
+
+    .foot-inner .col-f a,
+    .foot-inner .col-f p{
+      display:block;color:var(--muted);text-decoration:none;
+      font-size:14px;font-weight:300;margin:14px 0;
+    }
+    .foot-inner .col-f a:hover{color:var(--gold)}
+
+    .legal{
+      text-align:center;color:var(--muted-2);
+      font-size:12.5px;padding:44px 0 0;
+    }
+
+    /* ===== WHATSAPP FLOAT ===== */
+    .wa-float{
+      position:fixed;right:28px;bottom:28px;z-index:80;
+      width:58px;height:58px;border-radius:50%;
+      background:#25D366;display:flex;align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 30px rgba(37,211,102,.45);
+      text-decoration:none;font-size:30px;transition:transform .2s;
+    }
+    .wa-float:hover{transform:scale(1.1)}
+    .wa-float::before{
+      content:'';position:absolute;inset:0;border-radius:50%;
+      border:2px solid rgba(37,211,102,.6);
+      animation:ring 2.4s ease-out infinite;
+    }
+    @keyframes ring{
+      0%{transform:scale(1);opacity:.7}
+      100%{transform:scale(1.6);opacity:0}
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1100px){
+      :root{--px:48px}
+    }
+
+    @media(max-width:900px){
+      :root{--px:36px}
+
+      .srow{
+        grid-template-columns:1fr;
+        gap:40px;
+      }
+      .srow.flip .s-visual{order:0}
+
+      .s-visual{min-height:280px}
+      .s-visual .num-bg{font-size:160px}
+
+      .s-copy{padding:0}
+    }
+
+    @media(max-width:760px){
+      :root{--px:28px}
+
+      .nav-links{display:none}
+      .nav-toggle{display:block}
+
+      .page-hero{padding-top:80px;padding-bottom:60px}
+
+      .section{padding-top:60px;padding-bottom:60px}
+
+      .s-copy h2{font-size:clamp(22px,5vw,30px)}
+      .s-copy p.lead{font-size:15px}
+      .s-copy li{font-size:14px;margin:14px 0}
+
+      .cta-band{
+        padding:52px 32px;
+        margin:40px auto 70px;
+      }
+    }
+
+    @media(max-width:480px){
+      :root{--px:20px}
+
+      .page-hero{padding-top:64px;padding-bottom:48px}
+
+      .page-hero .label{
+        padding:8px 16px;font-size:11px;
+        margin-bottom:24px;
+      }
+
+      .chips{gap:10px;margin-top:32px}
+      .chip{padding:10px 18px;font-size:13px}
+
+      .section{padding-top:48px;padding-bottom:48px}
+
+      .s-visual{min-height:220px}
+      .s-visual .big-ico{font-size:64px}
+      .s-visual .num-bg{font-size:120px}
+
+      .s-copy li .tick{width:20px;height:20px}
+
+      .cta-band{
+        padding:44px 24px;
+        margin:32px auto 56px;
+        border-radius:20px;
+      }
+
+      .cta-band h2{font-size:clamp(22px,6vw,30px)}
+      .cta-band p{font-size:15px;margin-bottom:32px}
+
+      .foot-inner{gap:36px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *{animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+
+    a.btn:focus-visible,
+    button:focus-visible{
+      outline:3px solid rgba(214,166,91,.5);outline-offset:3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-fx">
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="orb o3"></div>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="logo">
+          <img src="locaura-logo.jpg" alt="Locaura logo" onerror="this.style.display='none'"/>
+        </div>
+        <span class="name">Locaura</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="packages.html">Packages</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <header class="container page-hero">
+    <span class="label">What We Do</span>
+    <h1>Everything your brand needs to<br><span class="accent">show up and stand out.</span></h1>
+    <p class="sub">From the first idea to the final cut, Locaura handles the entire content engine — strategy, production, and growth — so your brand never goes quiet.</p>
+    <div class="chips">
+      <a href="#strategy" class="chip">🎯 Content Strategy</a>
+      <a href="#reels" class="chip">🎬 Reel Production</a>
+      <a href="#direction" class="chip">✨ Creative Direction</a>
+      <a href="#growth" class="chip">📈 Social Media Growth</a>
+      <a href="#video" class="chip">🎥 Premium Video</a>
+    </div>
+  </header>
+
+  <!-- ===== SERVICE 01 ===== -->
+  <section class="container section" id="strategy">
+    <div class="srow reveal">
+      <div class="s-copy">
+        <span class="tag">Service 01</span>
+        <h2>Content Strategy</h2>
+        <p class="lead">Great content starts long before the camera rolls. We build a clear, data-informed plan that turns your goals into a content engine your audience actually wants to follow.</p>
+        <ul>
+          <li><span class="tick"></span>Audience &amp; competitor research</li>
+          <li><span class="tick"></span>Content pillars &amp; monthly roadmap</li>
+          <li><span class="tick"></span>Trend mapping &amp; hook ideation</li>
+          <li><span class="tick"></span>Posting cadence &amp; platform planning</li>
+        </ul>
+      </div>
+      <div class="s-visual">
+        <span class="num-bg">01</span>
+        <div class="glow"></div>
+        <span class="big-ico">🎯</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <!-- ===== SERVICE 02 ===== -->
+  <section class="container section" id="reels">
+    <div class="srow flip reveal">
+      <div class="s-visual">
+        <span class="num-bg">02</span>
+        <div class="glow"></div>
+        <span class="big-ico">🎬</span>
+      </div>
+      <div class="s-copy">
+        <span class="tag">Service 02</span>
+        <h2>Reel Production</h2>
+        <p class="lead">Short-form video is where attention lives. We script, shoot, and edit scroll-stopping reels designed to be watched, shared, and remembered.</p>
+        <ul>
+          <li><span class="tick"></span>Script writing &amp; shot planning</li>
+          <li><span class="tick"></span>On-location shoot execution</li>
+          <li><span class="tick"></span>Fast-paced, trend-aware editing</li>
+          <li><span class="tick"></span>Captions, hashtags &amp; posting support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <!-- ===== SERVICE 03 ===== -->
+  <section class="container section" id="direction">
+    <div class="srow reveal">
+      <div class="s-copy">
+        <span class="tag">Service 03</span>
+        <h2>Creative Direction</h2>
+        <p class="lead">A brand that looks consistent feels trustworthy. We shape a cohesive visual identity and creative vision so every piece of content feels unmistakably yours.</p>
+        <ul>
+          <li><span class="tick"></span>Visual identity &amp; mood direction</li>
+          <li><span class="tick"></span>Concept development for campaigns</li>
+          <li><span class="tick"></span>Consistent tone, color &amp; style</li>
+          <li><span class="tick"></span>Storytelling that fits your brand</li>
+        </ul>
+      </div>
+      <div class="s-visual">
+        <span class="num-bg">03</span>
+        <div class="glow"></div>
+        <span class="big-ico">✨</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <!-- ===== SERVICE 04 ===== -->
+  <section class="container section" id="growth">
+    <div class="srow flip reveal">
+      <div class="s-visual">
+        <span class="num-bg">04</span>
+        <div class="glow"></div>
+        <span class="big-ico">📈</span>
+      </div>
+      <div class="s-copy">
+        <span class="tag">Service 04</span>
+        <h2>Social Media Growth</h2>
+        <p class="lead">Content is only half the equation — growth is the other. We optimize, analyze, and refine so your reach, engagement, and following keep climbing.</p>
+        <ul>
+          <li><span class="tick"></span>Profile &amp; page optimization</li>
+          <li><span class="tick"></span>Performance tracking &amp; insights</li>
+          <li><span class="tick"></span>Engagement &amp; community strategy</li>
+          <li><span class="tick"></span>Continuous content refinement</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <!-- ===== SERVICE 05 ===== -->
+  <section class="container section" id="video">
+    <div class="srow reveal">
+      <div class="s-copy">
+        <span class="tag">Service 05</span>
+        <h2>Premium Video Production</h2>
+        <p class="lead">When you need something cinematic, we deliver. High-end production with professional crews, creative direction, and editing crafted to make your brand look world-class.</p>
+        <ul>
+          <li><span class="tick"></span>Professional videographers &amp; gear</li>
+          <li><span class="tick"></span>Cinematic shooting &amp; color grading</li>
+          <li><span class="tick"></span>Motion graphics &amp; sound design</li>
+          <li><span class="tick"></span>Campaign, launch &amp; ad creatives</li>
+        </ul>
+      </div>
+      <div class="s-visual">
+        <span class="num-bg">05</span>
+        <div class="glow"></div>
+        <span class="big-ico">🎥</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="container">
+    <div class="cta-band reveal">
+      <h2>Not sure where to start?</h2>
+      <p>Tell us about your brand and we'll recommend the right mix of services to get you growing.</p>
+      <a class="btn btn-primary" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27d%20like%20to%20learn%20more%20about%20Locaura%27s%20services%20for%20my%20business.%20Can%20we%20connect%3F" target="_blank" rel="noopener">Book a Discovery Call</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="container">
+    <div class="foot-inner">
+      <div class="col-f">
+        <h4>Locaura</h4>
+        <p style="max-width:240px">A social media growth agency building brands through content and digital presence.</p>
+      </div>
+      <div class="col-f">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="packages.html">Packages</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="col-f">
+        <h4>Get in Touch</h4>
+        <a href="tel:+919537802446">📞 +91 95378 02446</a>
+        <a href="mailto:workwithyashdeep@gmail.com">✉️ workwithyashdeep@gmail.com</a>
+        <a href="https://wa.me/919537802446" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="legal">© Locaura by Yashdeep — Social Media Growth Agency</div>
+  </footer>
+
+  <!-- ===== WHATSAPP ===== -->
+  <a class="wa-float" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27d%20like%20to%20know%20more%20about%20Locaura" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+  <script>
+  (function(){
+    var nav=document.getElementById('nav');
+    window.addEventListener('scroll',function(){
+      nav.classList.toggle('scrolled',window.scrollY>30);
+    });
+
+    var toggle=document.getElementById('navToggle');
+    var menu=document.getElementById('mobileMenu');
+    toggle.addEventListener('click',function(){
+      menu.classList.toggle('open');
+      toggle.textContent=menu.classList.contains('open')?'✕':'☰';
+    });
+
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:.12});
+
+    document.querySelectorAll('.reveal').forEach(function(el){
+      io.observe(el);
+    });
+  })();
+  </script>
+</body>
+</html>
