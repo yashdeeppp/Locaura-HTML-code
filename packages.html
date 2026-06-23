@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Locaura — Packages & Pricing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Locaura content packages — transparent pricing for every stage of your brand's growth." />
+  <style>
+    :root{
+      --card:rgba(255,255,255,0.035);--card-border:rgba(255,255,255,0.06);
+      --muted:#94a0b3;--muted-2:#6f7c91;--gold:#D6A65B;
+      --gold-soft:rgba(214,166,91,0.14);--text:#eef2f9;
+      --max-width:1180px;--radius:18px;--px:60px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:#070b14;color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.55;overflow-x:hidden}
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 var(--px);position:relative;z-index:2}
+    a{color:inherit}
+
+    .bg-fx{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+    .bg-fx::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#070c18 0%,#0a1020 30%,#0b1326 70%,#070b14 100%)}
+    .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;animation:float 18s ease-in-out infinite}
+    .orb.o1{width:480px;height:480px;background:rgba(214,166,91,.22);top:-120px;right:-80px}
+    .orb.o2{width:420px;height:420px;background:rgba(124,98,180,.20);bottom:-100px;left:-100px;animation-delay:-6s}
+    .orb.o3{width:360px;height:360px;background:rgba(214,166,91,.12);top:40%;left:55%;animation-delay:-12s}
+    @keyframes float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-50px) scale(1.1)}66%{transform:translate(-30px,30px) scale(.95)}}
+
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(7,12,24,.55);border-bottom:1px solid rgba(255,255,255,.05);transition:background .3s}
+    .nav.scrolled{background:rgba(7,12,24,.85)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px var(--px);max-width:var(--max-width);margin:0 auto}
+    .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .logo{width:42px;height:42px;border-radius:11px;overflow:hidden;flex:0 0 42px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(214,166,91,.25),rgba(255,255,255,.04));border:1px solid rgba(214,166,91,.25)}
+    .logo img{width:42px;height:42px;object-fit:cover;border-radius:11px;display:block}
+    .nav-brand .name{font-family:Poppins,sans-serif;font-weight:700;font-size:17px;letter-spacing:.5px}
+    .nav-links{display:flex;gap:32px;list-style:none}
+    .nav-links a{text-decoration:none;color:var(--muted);font-size:14.5px;font-weight:500;transition:color .2s;position:relative}
+    .nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--gold);transition:width .25s}
+    .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-toggle{display:none;background:none;border:none;color:var(--text);font-size:24px;cursor:pointer}
+    .mobile-menu{display:none;flex-direction:column;gap:4px;padding:14px var(--px) 24px;background:rgba(7,12,24,.95);border-bottom:1px solid rgba(255,255,255,.06)}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+    .mobile-menu a:hover{color:var(--gold)}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 32px;border-radius:14px;border:none;cursor:pointer;font-weight:600;font-size:15px;font-family:Inter,sans-serif;transition:transform .2s,box-shadow .2s,filter .2s;text-decoration:none;position:relative;overflow:hidden}
+    .btn-primary{background:linear-gradient(120deg,var(--gold),#e9c884);color:#1a1206;box-shadow:0 12px 34px rgba(214,166,91,.28)}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(214,166,91,.40);filter:brightness(1.04)}
+    .btn-primary::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-20deg);transition:left .6s}
+    .btn-primary:hover::after{left:140%}
+    .btn-ghost{background:rgba(255,255,255,.04);color:var(--text);border:1px solid rgba(255,255,255,.12)}
+    .btn-ghost:hover{transform:translateY(-3px);border-color:rgba(214,166,91,.4);box-shadow:0 12px 30px rgba(0,0,0,.4)}
+    .btn-block{width:100%;text-align:center}
+
+    .page-hero{text-align:center;padding:100px 0 70px}
+    .page-hero .label{display:inline-block;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);padding:10px 20px;border-radius:999px;border:1px solid rgba(214,166,91,.25);background:var(--gold-soft);margin-bottom:30px;font-weight:500;animation:fadeUp .8s ease both}
+    .page-hero h1{font-family:Poppins,sans-serif;font-weight:800;font-size:clamp(34px,5.6vw,58px);line-height:1.08;margin:0 0 24px;letter-spacing:-1.1px;animation:fadeUp .8s ease .1s both}
+    .page-hero h1 .accent{background:linear-gradient(120deg,var(--gold),#f0d59a,var(--gold),#f7e6c2);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s linear infinite}
+    @keyframes shimmer{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+    .page-hero p.sub{max-width:600px;margin:0 auto;color:var(--muted);font-size:clamp(16px,2.4vw,19px);font-weight:300;animation:fadeUp .8s ease .2s both}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+
+    .tab-row{display:flex;justify-content:center;gap:12px;margin:48px 0 60px;flex-wrap:wrap}
+    .tab-btn{padding:13px 30px;border-radius:999px;border:1px solid var(--card-border);background:var(--card);color:var(--muted);font-size:14.5px;font-weight:500;cursor:pointer;font-family:Inter,sans-serif;transition:all .25s;backdrop-filter:blur(10px)}
+    .tab-btn:hover{border-color:rgba(214,166,91,.4);color:var(--gold)}
+    .tab-btn.active{background:linear-gradient(120deg,var(--gold),#e9c884);color:#1a1206;border-color:transparent;box-shadow:0 8px 24px rgba(214,166,91,.3);font-weight:600}
+
+    .reveal{opacity:0;transform:translateY(40px);transition:opacity .7s,transform .7s}
+    .reveal.in{opacity:1;transform:translateY(0)}
+
+    .section{padding:20px 0 90px}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 60px}
+    .section-head .kicker{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+    .section-head h2{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(26px,4vw,40px);margin:0 0 16px;letter-spacing:-.6px}
+    .section-head p{color:var(--muted);font-weight:300;font-size:16px}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .card{position:relative;background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--card-border);border-radius:var(--radius);padding:42px 34px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+    .card:hover{transform:translateY(-10px);border-color:rgba(214,166,91,.28);box-shadow:0 28px 64px rgba(3,7,18,.65)}
+    .card .ptitle{font-family:Poppins,sans-serif;font-weight:600;font-size:20px;margin:0 0 10px}
+    .card .pcount{color:var(--gold);font-size:14px;font-weight:500;margin-bottom:26px;letter-spacing:.3px}
+    .card .price{font-family:Poppins,sans-serif;font-weight:800;font-size:42px;margin:0 0 8px;letter-spacing:-1.5px;line-height:1}
+    .card .price-note{font-size:13px;color:var(--muted-2);font-weight:300;margin-bottom:28px;font-style:italic}
+    ul.features{list-style:none;margin:0 0 30px;flex:1}
+    ul.features li{display:flex;gap:14px;align-items:flex-start;color:var(--muted);font-size:14.5px;margin:16px 0;font-weight:300}
+    ul.features li .tick{flex-shrink:0;width:18px;height:18px;border-radius:50%;margin-top:2px;background:var(--gold-soft);border:1px solid rgba(214,166,91,.35);display:flex;align-items:center;justify-content:center}
+    ul.features li .tick::after{content:'';width:5px;height:9px;border:solid var(--gold);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+    .card .smalltext{color:var(--muted-2);font-size:12.5px;font-style:italic;margin:-10px 0 28px;font-weight:300}
+
+    .card.premium{border-color:rgba(214,166,91,.45);background:linear-gradient(180deg,rgba(214,166,91,.10),rgba(255,255,255,.03));box-shadow:0 0 0 1px rgba(214,166,91,.18),0 24px 70px rgba(214,166,91,.14)}
+    .card.premium:hover{box-shadow:0 0 0 1px rgba(214,166,91,.32),0 32px 80px rgba(214,166,91,.24)}
+    .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(120deg,var(--gold),#f0d59a);color:#1a1206;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:8px 20px;border-radius:999px;box-shadow:0 8px 22px rgba(214,166,91,.4);white-space:nowrap}
+
+    .divider-line{height:1px;background:linear-gradient(90deg,transparent,rgba(214,166,91,.3),transparent);margin:80px 0}
+
+    .addon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:840px;margin:0 auto}
+    .addon-item{display:flex;align-items:center;gap:18px;background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:24px 28px;backdrop-filter:blur(10px);transition:border-color .25s,transform .25s}
+    .addon-item:hover{border-color:rgba(214,166,91,.35);transform:translateY(-4px)}
+    .addon-item .addon-ico{width:42px;height:42px;border-radius:11px;background:var(--gold-soft);border:1px solid rgba(214,166,91,.3);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+    .addon-item .addon-name{font-size:15px;font-weight:500}
+    .addon-item .addon-desc{font-size:13px;color:var(--muted-2);font-weight:300;margin-top:4px}
+
+    .faq{max-width:740px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--card-border);padding:26px 0;cursor:pointer}
+    .faq-item:first-child{border-top:1px solid var(--card-border)}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:500;gap:16px;user-select:none}
+    .faq-q .arrow{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--gold-soft);border:1px solid rgba(214,166,91,.3);display:flex;align-items:center;justify-content:center;transition:transform .3s;font-size:13px;color:var(--gold)}
+    .faq-item.open .faq-q .arrow{transform:rotate(180deg)}
+    .faq-a{color:var(--muted);font-weight:300;font-size:15px;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+    .faq-item.open .faq-a{max-height:300px;padding-top:18px}
+
+    .cta-band{text-align:center;margin:50px auto 90px;max-width:840px;background:linear-gradient(180deg,rgba(214,166,91,.12),rgba(255,255,255,.02));border:1px solid rgba(214,166,91,.25);border-radius:24px;padding:70px 48px;backdrop-filter:blur(14px);position:relative;overflow:hidden}
+    .cta-band::before{content:'';position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(214,166,91,.25),transparent 70%);top:-100px;left:50%;transform:translateX(-50%);animation:pulse 5s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.4;transform:translateX(-50%) scale(1)}50%{opacity:.8;transform:translateX(-50%) scale(1.15)}}
+    .cta-band h2{font-family:Poppins,sans-serif;font-weight:700;font-size:clamp(28px,4.5vw,44px);margin:0 0 20px;letter-spacing:-.6px;position:relative}
+    .cta-band p{color:var(--muted);font-weight:300;font-size:17px;max-width:520px;margin:0 auto 40px;position:relative}
+    .cta-band .btn{position:relative}
+
+    footer{border-top:1px solid rgba(255,255,255,.05);padding:56px 0 40px;margin-top:50px;position:relative;z-index:2}
+    .foot-inner{display:flex;justify-content:space-between;gap:48px;flex-wrap:wrap}
+    .foot-inner .col-f h4{font-family:Poppins,sans-serif;font-size:15px;margin:0 0 18px}
+    .foot-inner .col-f a,.foot-inner .col-f p{display:block;color:var(--muted);text-decoration:none;font-size:14px;font-weight:300;margin:12px 0}
+    .foot-inner .col-f a:hover{color:var(--gold)}
+    .legal{text-align:center;color:var(--muted-2);font-size:12.5px;padding:40px 0 0}
+
+    .wa-float{position:fixed;right:26px;bottom:26px;z-index:80;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(37,211,102,.45);text-decoration:none;font-size:30px;transition:transform .2s}
+    .wa-float:hover{transform:scale(1.1)}
+    .wa-float::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid rgba(37,211,102,.6);animation:ring 2.4s ease-out infinite}
+    @keyframes ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+
+    @media(max-width:1100px){:root{--px:48px}}
+    @media(max-width:980px){.cards{grid-template-columns:1fr;max-width:480px;margin:0 auto}.card.premium{order:-1}}
+    @media(max-width:760px){:root{--px:28px}.nav-links{display:none}.nav-toggle{display:block}.addon-grid{grid-template-columns:1fr}.section{padding:16px 0 64px}.cta-band{padding:52px 32px;margin:40px auto 70px}}
+    @media(max-width:480px){:root{--px:22px}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+    a.btn:focus-visible,button:focus-visible{outline:3px solid rgba(214,166,91,.5);outline-offset:3px}
+  </style>
+</head>
+<body>
+
+  <div class="bg-fx"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand"><div class="logo"><img src="locaura-logo.jpg" alt="Locaura logo" onerror="this.style.display='none'"/></div><span class="name">Locaura</span></a>
+      <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="packages.html" class="active">Packages</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu"><a href="index.html">Home</a><a href="services.html">Services</a><a href="packages.html">Packages</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  </nav>
+
+  <header class="container page-hero">
+    <span class="label">Transparent Pricing</span>
+    <h1>Simple packages.<br><span class="accent">Real results.</span></h1>
+    <p class="sub">No hidden fees, no confusion. Pick the plan that fits your brand's stage and goals — or let us build you a custom proposal.</p>
+  </header>
+
+  <div class="container"><div class="tab-row"><button class="tab-btn active" data-tab="growth">Content Growth</button><button class="tab-btn" data-tab="premium">Premium Production</button></div></div>
+
+  <section class="container section" id="growth-tab">
+    <div class="section-head reveal"><div class="kicker">Section 01</div><h2>Content Growth Packages</h2><p>Built for businesses that want consistent visibility, stronger brand presence, and regular content production every month.</p></div>
+    <div class="cards">
+      <article class="card reveal">
+        <h3 class="ptitle">Growth Starter</h3><div class="pcount">5 Creative Reels / Month</div><div class="price">₹12,999</div><div class="price-note">per month</div>
+        <ul class="features"><li><span class="tick"></span>Trend research</li><li><span class="tick"></span>Content planning</li><li><span class="tick"></span>Script writing</li><li><span class="tick"></span>Shoot execution</li><li><span class="tick"></span>Creative editing</li><li><span class="tick"></span>Captions &amp; hashtags</li><li><span class="tick"></span>Posting support</li></ul>
+        <div class="smalltext">Ideal for businesses starting their content journey.</div>
+        <a class="btn btn-ghost btn-block" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Growth%20Starter%20package.%20Can%20we%20schedule%20a%20quick%20call%3F" target="_blank" rel="noopener">Get Started</a>
+      </article>
+      <article class="card reveal" style="transition-delay:.1s">
+        <h3 class="ptitle">Business Growth</h3><div class="pcount">15 Creative Reels / Month</div><div class="price">₹34,999</div><div class="price-note">per month</div>
+        <ul class="features"><li><span class="tick"></span>Everything in Growth Starter</li><li><span class="tick"></span>Batch content creation</li><li><span class="tick"></span>Multi-day shoots</li><li><span class="tick"></span>Advanced content planning</li><li><span class="tick"></span>Monthly content roadmap</li></ul>
+        <div class="smalltext">Ideal for businesses wanting consistent audience growth.</div>
+        <a class="btn btn-ghost btn-block" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Business%20Growth%20package.%20Can%20we%20schedule%20a%20quick%20call%3F" target="_blank" rel="noopener">Get Started</a>
+      </article>
+      <article class="card reveal" style="transition-delay:.2s">
+        <h3 class="ptitle">Brand Growth</h3><div class="pcount">30 Creative Reels / Month</div><div class="price">₹59,999</div><div class="price-note">per month</div>
+        <ul class="features"><li><span class="tick"></span>Everything in Business Growth</li><li><span class="tick"></span>Dedicated content manager</li><li><span class="tick"></span>Full content calendar</li><li><span class="tick"></span>Monthly review calls</li><li><span class="tick"></span>Priority support</li></ul>
+        <div class="smalltext">Ideal for businesses serious about scaling their brand.</div>
+        <a class="btn btn-ghost btn-block" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Brand%20Growth%20package.%20Can%20we%20schedule%20a%20quick%20call%3F" target="_blank" rel="noopener">Get Started</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="container section" id="premium-tab" style="display:none">
+    <div class="section-head reveal"><div class="kicker">Section 02</div><h2>Premium Creative Production</h2><p>Cinematic content crafted to stop the scroll. For brands that want to make a lasting impression.</p></div>
+    <div class="cards">
+      <article class="card reveal">
+        <h3 class="ptitle">Signature Reel</h3><div class="pcount">1 Premium Reel</div><div class="price">₹12,999</div><div class="price-note">one-time</div>
+        <ul class="features"><li><span class="tick"></span>Professional videographer</li><li><span class="tick"></span>Creative direction</li><li><span class="tick"></span>Premium production</li><li><span class="tick"></span>Viral-style editing</li><li><span class="tick"></span>Motion graphics</li><li><span class="tick"></span>Sound design</li><li><span class="tick"></span>Cinematic color grading</li></ul>
+        <div class="smalltext">Perfect for a launch post, brand intro, or hero reel.</div>
+        <a class="btn btn-ghost btn-block" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Signature%20Reel.%20Can%20we%20schedule%20a%20quick%20call%3F" target="_blank" rel="noopener">Book My Signature Reel</a>
+      </article>
+      <article class="card premium reveal" style="transition-delay:.1s">
+        <span class="badge">Most Popular</span>
+        <h3 class="ptitle">Premium Reel Package</h3><div class="pcount">5 Premium Reels</div><div class="price">₹49,999</div><div class="price-note">one-time · saves ₹15,000</div>
+        <ul class="features"><li><span class="tick"></span>Everything in Signature Reel</li><li><span class="tick"></span>Multiple shoot locations</li><li><span class="tick"></span>Story-driven concepts</li><li><span class="tick"></span>Premium production workflow</li><li><span class="tick"></span>High-end edits</li><li><span class="tick"></span>Brand-focused strategy</li></ul>
+        <div class="smalltext">Best value for brands ready to make a big statement.</div>
+        <a class="btn btn-primary btn-block" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Premium%20Reel%20Package.%20Can%20we%20schedule%20a%20quick%20call%3F" target="_blank" rel="noopener">Book the Premium Package</a>
+      </article>
+      <article class="card reveal" style="transition-delay:.2s">
+        <h3 class="ptitle">Custom Brand Package</h3><div class="pcount">Tailored to your brand</div><div class="price">Custom</div><div class="price-note">bespoke quote</div>
+        <ul class="features"><li><span class="tick"></span>Campaign shoots</li><li><span class="tick"></span>Product launches</li><li><span class="tick"></span>Event coverage</li><li><span class="tick"></span>Ad creatives</li><li><span class="tick"></span>Monthly retainers</li><li><span class="tick"></span>Bespoke production plans</li></ul>
+        <div class="smalltext">For brands with unique needs and bigger ambitions.</div>
+        <a class="btn btn-ghost btn-block" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27d%20like%20a%20custom%20content%20package.%20Can%20we%20discuss%3F" target="_blank" rel="noopener">Request a Custom Proposal</a>
+      </article>
+    </div>
+  </section>
+
+  <div class="container"><div class="divider-line"></div></div>
+
+  <section class="container" style="padding-bottom:90px">
+    <div class="section-head reveal"><div class="kicker">Enhancement Services</div><h2>Optional Add-Ons</h2><p>Stack these onto any package to go further, faster. Pricing discussed on your discovery call.</p></div>
+    <div class="addon-grid">
+      <div class="addon-item reveal"><div class="addon-ico">📸</div><div><div class="addon-name">Professional Photography</div><div class="addon-desc">High-quality product and brand photography</div></div></div>
+      <div class="addon-item reveal" style="transition-delay:.08s"><div class="addon-ico">🎯</div><div><div class="addon-name">Content Strategy Session</div><div class="addon-desc">Deep-dive planning session for your content roadmap</div></div></div>
+      <div class="addon-item reveal" style="transition-delay:.14s"><div class="addon-ico">📅</div><div><div class="addon-name">Monthly Content Calendar</div><div class="addon-desc">Planned and organized posting schedule</div></div></div>
+      <div class="addon-item reveal" style="transition-delay:.2s"><div class="addon-ico">📢</div><div><div class="addon-name">Ads Management</div><div class="addon-desc">Paid social campaigns to amplify your reach</div></div></div>
+    </div>
+  </section>
+
+  <div class="container"><div class="divider-line"></div></div>
+
+  <section class="container" style="padding:60px 0 90px">
+    <div class="section-head reveal"><div class="kicker">FAQ</div><h2>Common Questions</h2><p>Everything you need to know before getting started.</p></div>
+    <div class="faq reveal">
+      <div class="faq-item"><div class="faq-q">What is included in the shoot?<span class="arrow">▾</span></div><div class="faq-a">All packages include on-location shoot execution, script writing, creative direction, editing, captions, and hashtags. Higher-tier packages include multiple shoot days and dedicated content management.</div></div>
+      <div class="faq-item"><div class="faq-q">Do I need to be on camera?<span class="arrow">▾</span></div><div class="faq-a">Not necessarily. We create content around your brand — whether that's you, your products, your space, or your team. We'll plan what works best during the strategy session.</div></div>
+      <div class="faq-item"><div class="faq-q">How long does it take to start?<span class="arrow">▾</span></div><div class="faq-a">We typically kick off within 5–7 days of onboarding. The first step is a discovery call where we understand your brand, goals, and audience — then we build your content plan.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I upgrade my package later?<span class="arrow">▾</span></div><div class="faq-a">Absolutely. Many clients start with the Growth Starter and move up as their brand scales. We make transitions seamless with no gaps in content production.</div></div>
+      <div class="faq-item"><div class="faq-q">Which platforms do you post on?<span class="arrow">▾</span></div><div class="faq-a">We primarily focus on Instagram and YouTube Shorts, but content can be adapted for Facebook, LinkedIn, and other platforms depending on your audience and goals.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you offer a custom plan if nothing fits?<span class="arrow">▾</span></div><div class="faq-a">Yes — the Custom Brand Package is fully bespoke. Tell us what you need and we'll build a proposal around your exact goals, timeline, and budget.</div></div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="cta-band reveal">
+      <h2>Not sure which package is right?</h2>
+      <p>Book a free discovery call. We'll listen, understand your goals, and recommend the perfect fit — no pressure.</p>
+      <a class="btn btn-primary" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27d%20like%20to%20book%20a%20discovery%20call%20to%20find%20the%20right%20package.%20Can%20we%20connect%3F" target="_blank" rel="noopener">Book a Free Discovery Call</a>
+    </div>
+  </section>
+
+  <footer class="container">
+    <div class="foot-inner">
+      <div class="col-f"><h4>Locaura</h4><p style="max-width:240px">A social media growth agency building brands through content and digital presence.</p></div>
+      <div class="col-f"><h4>Explore</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="packages.html">Packages</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+      <div class="col-f"><h4>Get in Touch</h4><a href="tel:+919537802446">📞 +91 95378 02446</a><a href="mailto:workwithyashdeep@gmail.com">✉️ workwithyashdeep@gmail.com</a><a href="https://wa.me/919537802446" target="_blank" rel="noopener">💬 WhatsApp Us</a></div>
+    </div>
+    <div class="legal">© Locaura by Yashdeep — Social Media Growth Agency</div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27d%20like%20to%20know%20more%20about%20Locaura" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+  <script>
+  (function(){
+    var nav=document.getElementById('nav');
+    window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>30)});
+    var toggle=document.getElementById('navToggle'),menu=document.getElementById('mobileMenu');
+    toggle.addEventListener('click',function(){menu.classList.toggle('open');toggle.textContent=menu.classList.contains('open')?'✕':'☰'});
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+    var tabs=document.querySelectorAll('.tab-btn'),tG=document.getElementById('growth-tab'),tP=document.getElementById('premium-tab');
+    tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(t){t.classList.remove('active')});b.classList.add('active');if(b.dataset.tab==='growth'){tG.style.display='';tP.style.display='none'}else{tG.style.display='none';tP.style.display=''}document.querySelectorAll('.reveal:not(.in)').forEach(function(el){io.observe(el)})})});
+    document.querySelectorAll('.faq-item').forEach(function(item){item.querySelector('.faq-q').addEventListener('click',function(){var w=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});if(!w)item.classList.add('open')})});
+  })();
+  </script>
+</body>
+</html>
