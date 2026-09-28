@@ -113,7 +113,7 @@ ul.features li .tick::after{content:'';width:5px;height:9px;border:solid var(--g
 .card.premium:hover{box-shadow:0 0 0 1px rgba(214,166,91,.32),0 32px 80px rgba(214,166,91,.24)}
 .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(120deg,var(--gold),#f0d59a);color:#1a1206;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:8px 20px;border-radius:999px;box-shadow:0 8px 22px rgba(214,166,91,.4);white-space:nowrap}
 .divider-line{height:1px;background:linear-gradient(90deg,transparent,rgba(214,166,91,.3),transparent);margin:80px 0}
-.addon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:840px;margin:0 auto}
+.addon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:0 auto}
 .addon-item{display:flex;align-items:center;gap:18px;background:var(--card);border:1px solid var(--card-border);border-radius:14px;padding:24px 28px;backdrop-filter:blur(10px);transition:border-color .25s,transform .25s}
 .addon-item:hover{border-color:rgba(214,166,91,.35);transform:translateY(-4px)}
 .addon-item .addon-ico{width:42px;height:42px;border-radius:11px;background:var(--gold-soft);border:1px solid rgba(214,166,91,.3);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
@@ -144,7 +144,7 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:56px 0 40px;margin-top
 .wa-float::before{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid rgba(37,211,102,.6);animation:ring 2.4s ease-out infinite}
 @keyframes ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
 @media(max-width:1100px){:root{--px:48px}}
-@media(max-width:980px){.cards{grid-template-columns:1fr;max-width:480px;margin:0 auto}.card.premium{order:-1}}
+@media(max-width:980px){.cards{grid-template-columns:1fr;max-width:480px;margin:0 auto}.card.premium{order:-1}.addon-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){:root{--px:28px}.nav-links{display:none}.nav-toggle{display:block}.addon-grid{grid-template-columns:1fr}.section{padding:16px 0 64px}.cta-band{padding:52px 32px;margin:40px auto 70px}}
 @media(max-width:480px){:root{--px:22px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
@@ -169,26 +169,26 @@ a.btn:focus-visible,button:focus-visible{outline:3px solid rgba(214,166,91,.5);o
 <header class="container page-hero">
 <span class="label">Transparent Pricing</span>
 <h1>Simple packages.<br><span class="accent">Real results.</span></h1>
-<p class="sub">No hidden fees, no confusion. Pick the plan that fits your brand's stage and goals — or let us build you a custom proposal.</p>
+<p class="sub">No hidden fees. Pick the plan that fits your stage — or ask for a custom proposal.</p>
 </header>
 <div class="container"><div class="tab-row"><button class="tab-btn active" data-tab="growth">Content Growth</button><button class="tab-btn" data-tab="premium">Premium Production</button></div></div>
 <section class="container section" id="growth-tab">
-<div class="section-head reveal"><div class="kicker">Section 01</div><h2>Content Growth Packages</h2><p>Built for businesses that want consistent visibility, stronger brand presence, and regular content production every month.</p></div>
+<div class="section-head reveal"><div class="kicker">Section 01</div><h2>Content Growth Packages</h2><p>For businesses that want steady content and visibility, every month.</p></div>
 <div class="cards">
 <article class="card reveal">
-<h3 class="ptitle">Growth Starter</h3><div class="pcount">5 Creative Reels / Month</div><div class="price">₹12,999</div><div class="price-note">per month</div>
+<h3 class="ptitle">Growth Starter</h3><div class="pcount">5 Creative Reels / Month</div><div class="price">₹13,000</div><div class="price-note">per month</div>
 <ul class="features"><li><span class="tick"></span>Trend research</li><li><span class="tick"></span>Content planning</li><li><span class="tick"></span>Script writing</li><li><span class="tick"></span>Shoot execution</li><li><span class="tick"></span>Creative editing</li><li><span class="tick"></span>Captions &amp; hashtags</li><li><span class="tick"></span>Posting support</li></ul>
 <div class="smalltext">Ideal for businesses starting their content journey.</div>
 <a class="btn btn-ghost btn-block" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Growth%20Starter%20package.%20Can%20we%20schedule%20a%20quick%20call%3F" target="_blank" rel="noopener">Get Started</a>
 </article>
 <article class="card reveal" style="transition-delay:.1s">
-<h3 class="ptitle">Business Growth</h3><div class="pcount">15 Creative Reels / Month</div><div class="price">₹34,999</div><div class="price-note">per month</div>
+<h3 class="ptitle">Business Growth</h3><div class="pcount">15 Creative Reels / Month</div><div class="price">₹35,000</div><div class="price-note">per month</div>
 <ul class="features"><li><span class="tick"></span>Everything in Growth Starter</li><li><span class="tick"></span>Batch content creation</li><li><span class="tick"></span>Multi-day shoots</li><li><span class="tick"></span>Advanced content planning</li><li><span class="tick"></span>Monthly content roadmap</li></ul>
 <div class="smalltext">Ideal for businesses wanting consistent audience growth.</div>
 <a class="btn btn-ghost btn-block" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Business%20Growth%20package.%20Can%20we%20schedule%20a%20quick%20call%3F" target="_blank" rel="noopener">Get Started</a>
 </article>
 <article class="card reveal" style="transition-delay:.2s">
-<h3 class="ptitle">Brand Growth</h3><div class="pcount">30 Creative Reels / Month</div><div class="price">₹59,999</div><div class="price-note">per month</div>
+<h3 class="ptitle">Brand Growth</h3><div class="pcount">30 Creative Reels / Month</div><div class="price">₹60,000</div><div class="price-note">per month</div>
 <ul class="features"><li><span class="tick"></span>Everything in Business Growth</li><li><span class="tick"></span>Dedicated content manager</li><li><span class="tick"></span>Full content calendar</li><li><span class="tick"></span>Monthly review calls</li><li><span class="tick"></span>Priority support</li></ul>
 <div class="smalltext">Ideal for businesses serious about scaling their brand.</div>
 <a class="btn btn-ghost btn-block" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Brand%20Growth%20package.%20Can%20we%20schedule%20a%20quick%20call%3F" target="_blank" rel="noopener">Get Started</a>
@@ -196,17 +196,17 @@ a.btn:focus-visible,button:focus-visible{outline:3px solid rgba(214,166,91,.5);o
 </div>
 </section>
 <section class="container section" id="premium-tab" style="display:none">
-<div class="section-head reveal"><div class="kicker">Section 02</div><h2>Premium Creative Production</h2><p>Cinematic content crafted to stop the scroll. For brands that want to make a lasting impression.</p></div>
+<div class="section-head reveal"><div class="kicker">Section 02</div><h2>Premium Creative Production</h2><p>For brands that want one standout piece of content, done right.</p></div>
 <div class="cards">
 <article class="card reveal">
-<h3 class="ptitle">Signature Reel</h3><div class="pcount">1 Premium Reel</div><div class="price">₹12,999</div><div class="price-note">one-time</div>
+<h3 class="ptitle">Signature Reel</h3><div class="pcount">1 Premium Reel</div><div class="price">₹13,000</div><div class="price-note">one-time</div>
 <ul class="features"><li><span class="tick"></span>Professional videographer</li><li><span class="tick"></span>Creative direction</li><li><span class="tick"></span>Premium production</li><li><span class="tick"></span>Viral-style editing</li><li><span class="tick"></span>Motion graphics</li><li><span class="tick"></span>Sound design</li><li><span class="tick"></span>Cinematic color grading</li></ul>
 <div class="smalltext">Perfect for a launch post, brand intro, or hero reel.</div>
 <a class="btn btn-ghost btn-block" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Signature%20Reel.%20Can%20we%20schedule%20a%20quick%20call%3F" target="_blank" rel="noopener">Book My Signature Reel</a>
 </article>
 <article class="card premium reveal" style="transition-delay:.1s">
 <span class="badge">Most Popular</span>
-<h3 class="ptitle">Premium Reel Package</h3><div class="pcount">5 Premium Reels</div><div class="price">₹49,999</div><div class="price-note">one-time · saves ₹15,000</div>
+<h3 class="ptitle">Premium Reel Package</h3><div class="pcount">5 Premium Reels</div><div class="price">₹50,000</div><div class="price-note">one-time · saves ₹15,000</div>
 <ul class="features"><li><span class="tick"></span>Everything in Signature Reel</li><li><span class="tick"></span>Multiple shoot locations</li><li><span class="tick"></span>Story-driven concepts</li><li><span class="tick"></span>Premium production workflow</li><li><span class="tick"></span>High-end edits</li><li><span class="tick"></span>Brand-focused strategy</li></ul>
 <div class="smalltext">Best value for brands ready to make a big statement.</div>
 <a class="btn btn-primary btn-block" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27m%20interested%20in%20the%20Premium%20Reel%20Package.%20Can%20we%20schedule%20a%20quick%20call%3F" target="_blank" rel="noopener">Book the Premium Package</a>
@@ -221,12 +221,11 @@ a.btn:focus-visible,button:focus-visible{outline:3px solid rgba(214,166,91,.5);o
 </section>
 <div class="container"><div class="divider-line"></div></div>
 <section class="container" style="padding-bottom:90px">
-<div class="section-head reveal"><div class="kicker">Enhancement Services</div><h2>Optional Add-Ons</h2><p>Stack these onto any package to go further, faster. Pricing discussed on your discovery call.</p></div>
+<div class="section-head reveal"><div class="kicker">Enhancement Services</div><h2>Optional Add-Ons</h2><p>Add these to any package — pricing depends on what you need.</p></div>
 <div class="addon-grid">
-<div class="addon-item reveal"><div class="addon-ico">📸</div><div><div class="addon-name">Professional Photography</div><div class="addon-desc">High-quality product and brand photography</div></div></div>
-<div class="addon-item reveal" style="transition-delay:.08s"><div class="addon-ico">🎯</div><div><div class="addon-name">Content Strategy Session</div><div class="addon-desc">Deep-dive planning session for your content roadmap</div></div></div>
-<div class="addon-item reveal" style="transition-delay:.14s"><div class="addon-ico">📅</div><div><div class="addon-name">Monthly Content Calendar</div><div class="addon-desc">Planned and organized posting schedule</div></div></div>
-<div class="addon-item reveal" style="transition-delay:.2s"><div class="addon-ico">📢</div><div><div class="addon-name">Ads Management</div><div class="addon-desc">Paid social campaigns to amplify your reach</div></div></div>
+<div class="addon-item reveal"><div class="addon-ico">📢</div><div><div class="addon-name">Ads Management</div><div class="addon-desc">Management charges + ad spend amount (as per your requirements)</div></div></div>
+<div class="addon-item reveal" style="transition-delay:.08s"><div class="addon-ico">🎭</div><div><div class="addon-name">Model / Actor-Based Shoots</div><div class="addon-desc">Based on your requirements</div></div></div>
+<div class="addon-item reveal" style="transition-delay:.14s"><div class="addon-ico">🤝</div><div><div class="addon-name">Influencer Collaborations</div><div class="addon-desc">Based on your requirements</div></div></div>
 </div>
 </section>
 <div class="container"><div class="divider-line"></div></div>
@@ -244,7 +243,7 @@ a.btn:focus-visible,button:focus-visible{outline:3px solid rgba(214,166,91,.5);o
 <section class="container">
 <div class="cta-band reveal">
 <h2>Not sure which package is right?</h2>
-<p>Book a free discovery call. We'll listen, understand your goals, and recommend the perfect fit — no pressure.</p>
+<p>Book a free call — we'll help you pick.</p>
 <a class="btn btn-primary" href="https://wa.me/919537802446?text=Hey%20Yashdeep%2C%20I%27d%20like%20to%20book%20a%20discovery%20call%20to%20find%20the%20right%20package.%20Can%20we%20connect%3F" target="_blank" rel="noopener">Book a Free Discovery Call</a>
 </div>
 </section>
